@@ -42,7 +42,7 @@ class RNCallKeep {
 
   setup = async (options) => {
     if (!isIOS) {
-      return options.notCheckPermissions? this._setupAndroidNotCheckPermissions(options.android): this._setupAndroid(options.android);
+      return options.android.notCheckPermissions? this._setupAndroidNotCheckPermissions(options.android): this._setupAndroid(options.android);
     }
 
     return this._setupIOS(options.ios);
