@@ -308,6 +308,10 @@ class RNCallKeep {
   };
 
   showPhoneAccount = async (options) => {
+    if (isIOS) {
+      return;
+    }
+    
     const shouldOpenAccounts = await this._alert(options.android, true);
 
     if (shouldOpenAccounts) {
