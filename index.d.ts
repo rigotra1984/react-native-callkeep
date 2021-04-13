@@ -37,7 +37,8 @@ declare module 'react-native-callkeep' {
         channelName: string,
         notificationTitle: string,
         notificationIcon?: string
-      }
+      },
+      notCheckPermissions?: boolean
     }
   }
 
