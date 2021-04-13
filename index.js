@@ -42,7 +42,7 @@ class RNCallKeep {
 
   setup = async (options) => {
     if (!isIOS) {
-      return this._setupAndroidNotCheckPermissions(options.android);
+      return this._setupAndroid(options.android);
     }
 
     return this._setupIOS(options.ios);
@@ -285,25 +285,20 @@ class RNCallKeep {
     return false;
   };
 
-  _setupAndroidNotCheckPermissions = async (options) => {
-    RNCallKeepModule.setup(options);
-
-    const showAccountAlert = await RNCallKeepModule.checkPhoneAccountPermission(options.additionalPermissions || []);
-
-    if (!showAccountAlert) {
-      RNCallKeepModule.openPhoneAccounts();
-      return true;
-    }
-
-    return false;
-  };
-
   _hasDefaultPhoneAccount = async (options) => {
     const hasDefault = await RNCallKeepModule.checkDefaultPhoneAccount();
     const shouldOpenAccounts = await this._alert(options, hasDefault);
 
     if (shouldOpenAccounts) {
       RNCallKeepModule.openPhoneAccountSettings();
+    }
+  };
+
+  showPhoneAccount = async (options) => {
+    const shouldOpenAccounts = await this._alert(options.android, true);
+
+    if (shouldOpenAccounts) {
+      RNCallKeepModule.openPhoneAccounts();
     }
   };
 

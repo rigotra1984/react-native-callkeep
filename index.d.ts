@@ -174,5 +174,7 @@ declare module 'react-native-callkeep' {
     static setCurrentCallActive(callUUID: string): void
 
     static backToForeground(): void
+
+    static showPhoneAccount(options: IOptions): void
   }
 }
