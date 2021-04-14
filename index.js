@@ -311,7 +311,7 @@ class RNCallKeep {
     if (isIOS) {
       return;
     }
-    
+
     const shouldOpenAccounts = await this._alert(options.android, true);
 
     if (shouldOpenAccounts) {

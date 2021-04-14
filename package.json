@@ -1,12 +1,12 @@
 {
-  "name": "react-native-callkeep",
+  "name": "@islacel/react-native-callkeep",
   "version": "4.1.0",
   "description": "iOS 10 CallKit and Android ConnectionService Framework For React Native",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-native-webrtc/react-native-callkeep.git"
+    "url": "git+https://github.com/rigotra1984/react-native-callkeep.git"
   },
   "author": "See AUTHORS file",
   "maintainers": ["See AUTHORS file"],
